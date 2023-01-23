@@ -1,0 +1,32 @@
+[
+    {
+        "nome": "Eduardo",
+        "cpf": "123",
+        "endereco": "Rua a",
+        "email": "eduardo@email.com",
+        "telefone": "1234-3454"
+    },
+    {
+
+        "nome" : "Luiz",
+        "cpf" : "456",
+        "endereco" : "Rua b",
+        "email" : "luiz@email.com",
+        "telefone" : "1234-3454"
+    },
+    {
+
+        "nome" : "Bruna",
+        "cpf" : "789",
+        "endereco" : "Rua c",
+        "email" : "bruna@email.com",
+        "telefone" : "1234-3454"
+    },
+    {
+        "nome" : "Breno",
+        "cpf" : "987",
+        "endereco" : "Rua d",
+        "email" : "breno@email.com",
+        "telefone" : "7788-3454"
+    }
+]
