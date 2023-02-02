@@ -1,0 +1,47 @@
+[
+    {
+        "productIdentifier": "tv",
+        "nome": "TV",
+        "preco": 1000,
+        "descricao": "Uma TV de 29 polegadas",
+        "category" : {
+            "id": 1
+        }
+    },
+    {
+        "productIdentifier": "video-game",
+        "nome": "Super nintendo",
+        "preco": 1500,
+        "descricao": "Super Nintendo Bundle Super Mario World",
+        "category" : {
+            "id": 1
+        }
+    },
+    {
+        "productIdentifier": "cama-king",
+        "nome": "Cama King-size",
+        "preco": 2500,
+        "descricao": "Cama King-size super luxo",
+        "category" : {
+            "id": 2
+        }
+    },
+    {
+        "productIdentifier": "carro-controle-remoto",
+        "nome": "Carrinho de Controle Remoto",
+        "preco": 250,
+        "descricao": "Carrinho de Controle Remoto RF 20MHZ vermelho",
+        "category" : {
+            "id": 3
+        }
+    },
+    {
+        "productIdentifier": "maquina-sorvete-eliana",
+        "nome": "Maquina de Sorvete Eliana",
+        "preco": 450,
+        "descricao": "Máquina de fazer Sorvete da Eliana. Faça sorvete de chocolate, creme e morango.",
+        "category" : {
+            "id": 3
+        }
+    }
+]
