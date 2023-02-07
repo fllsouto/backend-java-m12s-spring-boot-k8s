@@ -1,6 +1,6 @@
 package com.cdc.backend.shoppingApi.model;
 
-import com.cdc.backend.shoppingApi.dto.ItemDTO;
+import com.cdc.backend.shoppingClient.dto.ItemDTO;
 
 import jakarta.persistence.Embeddable;
 

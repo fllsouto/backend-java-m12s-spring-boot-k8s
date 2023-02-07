@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cdc.backend.productApi.dto.ProductDTO;
+import com.cdc.backend.shoppingClient.dto.ProductDTO;
 import com.cdc.backend.productApi.service.ProductService;
 
 import jakarta.validation.Valid;

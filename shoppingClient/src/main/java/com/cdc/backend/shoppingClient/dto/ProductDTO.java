@@ -1,34 +1,22 @@
-package com.cdc.backend.productApi.dto;
+package com.cdc.backend.shoppingClient.dto;
 
-import com.cdc.backend.productApi.model.Product;
-
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+// import jakarta.validation.constraints.NotBlank;
+// import jakarta.validation.constraints.NotNull;
 
 public class ProductDTO {
 
-    @NotBlank
+    // @NotBlank
     private String productIdentifier;
-    @NotBlank
+    // @NotBlank
     private String nome;
-    @NotBlank
+    // @NotBlank
     private String descricao;
-    @NotNull
+    // @NotNull
     private Float preco;
-    @NotNull
+    // @NotNull
     private CategoryDTO category;
 
-    public static ProductDTO convert(Product product) {
-        ProductDTO productDTO = new ProductDTO();
-        productDTO.setNome(product.getNome());
-        productDTO.setPreco(product.getPreco());
-        productDTO.setDescricao(product.getDescricao());
-        productDTO.setProductIdentifier(product.getProductIdentifier());
-        if (product.getCategory() != null) {
-            productDTO.setCategory(CategoryDTO.convert(product.getCategory()));
-        }
-        return productDTO;
-    }
+
 
     public String getNome() {
         return nome;

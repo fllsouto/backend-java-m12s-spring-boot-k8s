@@ -3,7 +3,7 @@ package com.cdc.backend.shoppingApi.repository;
 import java.util.Date;
 import java.util.List;
 
-import com.cdc.backend.shoppingApi.dto.ShopReportDTO;
+import com.cdc.backend.shoppingClient.dto.ShopReportDTO;
 import com.cdc.backend.shoppingApi.model.Shop;
 
 public interface ReportRepository {

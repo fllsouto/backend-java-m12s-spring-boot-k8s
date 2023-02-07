@@ -1,6 +1,6 @@
 package com.cdc.backend.productApi.model;
 
-import com.cdc.backend.productApi.dto.CategoryDTO;
+import com.cdc.backend.shoppingClient.dto.CategoryDTO;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

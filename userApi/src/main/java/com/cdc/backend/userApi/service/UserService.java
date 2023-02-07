@@ -7,7 +7,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cdc.backend.userApi.dto.UserDTO;
+import com.cdc.backend.shoppingClient.dto.UserDTO;
+import com.cdc.backend.userApi.converter.DTOConverter;
 import com.cdc.backend.userApi.model.User;
 import com.cdc.backend.userApi.repository.UserRepository;
 
@@ -19,14 +20,14 @@ public class UserService {
 
 	public List<UserDTO> getAll() {
 		List<User> usuarios = userRepository.findAll();
-		return usuarios.stream().map(UserDTO::convert).toList();
+		return usuarios.stream().map(DTOConverter::convert).toList();
 	}
 
 	public UserDTO save(UserDTO userDTO) {
 		userDTO.setDataCadastro(new Date());
 		User user = User.convert(userDTO);
 		user = userRepository.save(user);
-		return UserDTO.convert(user);
+		return DTOConverter.convert(user);
 	}
 
 	public Boolean delete(Long userId) {
@@ -37,11 +38,11 @@ public class UserService {
 		}
 		return false;
 	}
-	
+
 	public UserDTO findById(Long userId) {
 		Optional<User> user = userRepository.findById(userId);
 		if (user.isPresent()) {
-			return UserDTO.convert(user.get());
+			return DTOConverter.convert(user.get());
 		}
 		return null;
 	}
@@ -49,7 +50,7 @@ public class UserService {
 	public UserDTO findByCpf(String cpf) {
 		Optional<User> user = userRepository.findByCpf(cpf);
 		if (user.isPresent()) {
-			return UserDTO.convert(user.get());
+			return DTOConverter.convert(user.get());
 		}
 		return null;
 	}
@@ -57,6 +58,6 @@ public class UserService {
 	public List<UserDTO> searchByName(String nome) {
 		System.out.println("Usando nome: " + nome);
 		List<User> usuarios = userRepository.findByNomeContainingIgnoreCase(nome);
-		return usuarios.stream().map(UserDTO::convert).toList();
+		return usuarios.stream().map(DTOConverter::convert).toList();
 	}
 }

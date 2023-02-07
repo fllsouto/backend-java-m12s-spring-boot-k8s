@@ -1,4 +1,4 @@
-package com.cdc.backend.shoppingApi.dto;
+package com.cdc.backend.shoppingClient.dto;
 
 public class ShopReportDTO {
 

@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.cdc.backend.shoppingApi.dto.ShopReportDTO;
+import com.cdc.backend.shoppingClient.dto.ShopReportDTO;
 import com.cdc.backend.shoppingApi.model.Shop;
 
 import jakarta.persistence.EntityManager;

@@ -6,7 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cdc.backend.productApi.dto.ProductDTO;
+import com.cdc.backend.shoppingClient.dto.ProductDTO;
+import com.cdc.backend.productApi.converter.DTOConverter;
 import com.cdc.backend.productApi.model.Product;
 import com.cdc.backend.productApi.repository.ProductRepository;
 
@@ -18,13 +19,13 @@ public class ProductService {
 
 	public List<ProductDTO> getAll() {
 		List<Product> products = productRepository.findAll();
-		return products.stream().map(ProductDTO::convert).toList();
+		return products.stream().map(DTOConverter::convert).toList();
 	}
 
 	public ProductDTO save(ProductDTO productDTO) {
 		Product product = Product.convert(productDTO);
 		product = productRepository.save(product);
-		return ProductDTO.convert(product);
+		return DTOConverter.convert(product);
 	}
 
 	public Boolean delete(Long productId) {
@@ -39,13 +40,13 @@ public class ProductService {
 	public ProductDTO findByProductIdentifier(String productIdentifier) {
 		Optional<Product> product = productRepository.findByProductIdentifier(productIdentifier);
 		if (product.isPresent()) {
-			return ProductDTO.convert(product.get());
+			return DTOConverter.convert(product.get());
 		}
 		return null;
 	}
 
 	public List<ProductDTO> getProductByCategoryId(long categoryId) {
 		List<Product> products = productRepository.getProductByCategory(categoryId);
-        return products.stream().map(ProductDTO::convert).toList();
+        return products.stream().map(DTOConverter::convert).toList();
 	}
 }

@@ -2,7 +2,7 @@ package com.cdc.backend.userApi.model;
 
 import java.util.Date;
 
-import com.cdc.backend.userApi.dto.UserDTO;
+import com.cdc.backend.shoppingClient.dto.UserDTO;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,7 +11,7 @@ import jakarta.persistence.Id;
 
 @Entity
 public class User {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -21,8 +21,8 @@ public class User {
 	private String email;
 	private String telefone;
 	private Date dataCadastro;
-	
-	
+
+
 	public static User convert(UserDTO userDTO) {
 		User user = new User();
 		user.setNome(userDTO.getNome());
@@ -31,10 +31,10 @@ public class User {
 		user.setEmail(userDTO.getEmail());
 		user.setTelefone(userDTO.getTelefone());
 		user.setDataCadastro(userDTO.getDataCadastro());
-		
+
 		return user;
 	}
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -71,5 +71,5 @@ public class User {
 	public void setDataCadastro(Date dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
-	
+
 }

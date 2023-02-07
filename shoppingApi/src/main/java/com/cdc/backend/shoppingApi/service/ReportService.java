@@ -7,9 +7,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.Date;
 import com.cdc.backend.shoppingApi.repository.ReportRepository;
+import com.cdc.backend.shoppingApi.converter.DTOConverter;
 import com.cdc.backend.shoppingApi.model.Shop;
-import com.cdc.backend.shoppingApi.dto.ShopDTO;
-import com.cdc.backend.shoppingApi.dto.ShopReportDTO;
+import com.cdc.backend.shoppingClient.dto.ShopDTO;
+import com.cdc.backend.shoppingClient.dto.ShopReportDTO;
 
 @Service
 public class ReportService {
@@ -25,7 +26,7 @@ public class ReportService {
 
         List<Shop> shops = reportRepository.getShopByFilters(dataInicio, dataFim, valorMinimo);
 
-        return shops.stream().map(ShopDTO::convert).collect(Collectors.toList());
+        return shops.stream().map(DTOConverter::convert).collect(Collectors.toList());
     }
 
     public ShopReportDTO getReportByDate(

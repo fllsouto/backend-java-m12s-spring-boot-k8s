@@ -1,15 +1,15 @@
-package com.cdc.backend.shoppingApi.dto;
+package com.cdc.backend.shoppingClient.dto;
 
-import com.cdc.backend.shoppingApi.model.Item;
+// import com.cdc.backend.shoppingApi.model.Item;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+// import jakarta.validation.constraints.NotBlank;
+// import jakarta.validation.constraints.NotNull;
 
 public class ItemDTO {
 
-    @NotBlank
+    // @NotBlank
     private String productIdentifier;
-    @NotNull
+    // @NotNull
     private Float price;
 
     public Float getPrice() {
@@ -28,11 +28,5 @@ public class ItemDTO {
         this.productIdentifier = productIdentifier;
     }
 
-    public static ItemDTO convert(Item item) {
-        ItemDTO itemDTO = new ItemDTO();
-        itemDTO.setProductIdentifier(item.getProductIdentifier());
-        itemDTO.setPrice(item.getPrice());
 
-        return itemDTO;
-    }
 }

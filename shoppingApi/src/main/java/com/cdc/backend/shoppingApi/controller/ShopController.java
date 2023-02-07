@@ -17,8 +17,8 @@ import com.cdc.backend.shoppingApi.service.ReportService;
 
 import jakarta.validation.Valid;
 
-import com.cdc.backend.shoppingApi.dto.ShopDTO;
-import com.cdc.backend.shoppingApi.dto.ShopReportDTO;
+import com.cdc.backend.shoppingClient.dto.ShopDTO;
+import com.cdc.backend.shoppingClient.dto.ShopReportDTO;
 
 @RestController
 public class ShopController {

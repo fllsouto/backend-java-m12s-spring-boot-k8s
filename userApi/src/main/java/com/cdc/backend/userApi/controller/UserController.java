@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cdc.backend.userApi.dto.UserDTO;
+import com.cdc.backend.shoppingClient.dto.UserDTO;
 import com.cdc.backend.userApi.service.UserService;
 
 @RestController
 public class UserController {
-	
+
 	@Autowired
 	private UserService userService;
 
@@ -34,12 +34,12 @@ public class UserController {
 	public UserDTO getUser(@PathVariable Long id) {
 		return userService.findById(id);
 	}
-	
+
 	@PostMapping("/users")
 	public UserDTO addUser(@RequestBody UserDTO userDTO) {
 		return userService.save(userDTO);
 	}
-	
+
 	@DeleteMapping("/users/{id}")
 	public Boolean removeUser(@PathVariable Long id) {
 		return userService.delete(id);
@@ -49,6 +49,6 @@ public class UserController {
 	public List<UserDTO> searchByName(@RequestParam(name="nome", required=true) String nome) {
 		return userService.searchByName(nome);
 	}
-	
-	
+
+
 }
