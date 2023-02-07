@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.Date;
-import com.cdc.backend.shoppingApi.repository.ShopRepository;
+import com.cdc.backend.shoppingApi.repository.ReportRepository;
 import com.cdc.backend.shoppingApi.model.Shop;
 import com.cdc.backend.shoppingApi.dto.ShopDTO;
 import com.cdc.backend.shoppingApi.dto.ShopReportDTO;
@@ -15,7 +15,7 @@ import com.cdc.backend.shoppingApi.dto.ShopReportDTO;
 public class ReportService {
 
     @Autowired
-    private ShopRepository shopRepository;
+    private ReportRepository reportRepository;
 
     public List<ShopDTO> getShopByFilters(
         Date dataInicio,
@@ -23,7 +23,7 @@ public class ReportService {
         Float valorMinimo
     ) {
 
-        List<Shop> shops = shopRepository.getShopByFilters(dataInicio, dataFim, valorMinimo);
+        List<Shop> shops = reportRepository.getShopByFilters(dataInicio, dataFim, valorMinimo);
 
         return shops.stream().map(ShopDTO::convert).collect(Collectors.toList());
     }
@@ -32,6 +32,6 @@ public class ReportService {
         Date dataInicio,
         Date dataFim
     ) {
-        return shopRepository.getReportByDate(dataInicio, dataFim);
+        return reportRepository.getReportByDate(dataInicio, dataFim);
     }
 }
