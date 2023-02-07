@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cdc.backend.shoppingClient.dto.UserDTO;
+import com.cdc.backend.shoppingClient.exception.UserNotFoundException;
 import com.cdc.backend.userApi.converter.DTOConverter;
 import com.cdc.backend.userApi.model.User;
 import com.cdc.backend.userApi.repository.UserRepository;
@@ -52,7 +53,7 @@ public class UserService {
 		if (user.isPresent()) {
 			return DTOConverter.convert(user.get());
 		}
-		return null;
+		throw new UserNotFoundException();
 	}
 
 	public List<UserDTO> searchByName(String nome) {
