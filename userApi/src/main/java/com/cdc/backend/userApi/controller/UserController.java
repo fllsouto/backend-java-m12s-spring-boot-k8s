@@ -17,38 +17,42 @@ import com.cdc.backend.userApi.service.UserService;
 @RestController
 public class UserController {
 
-	@Autowired
-	private UserService userService;
+    @Autowired
+    private UserService userService;
 
-	@GetMapping("/")
-	public String getMensagem() {
-		return "Spring boot is working";
-	}
+    @GetMapping("/")
+    public String getMensagem() {
+        return "Spring boot is working";
+    }
 
-	@GetMapping("/users")
-	public List<UserDTO> getUsers() {
-		return userService.getAll();
-	}
+    @GetMapping("/users")
+    public List<UserDTO> getUsers() {
+        return userService.getAll();
+    }
 
-	@GetMapping("/users/{id}")
-	public UserDTO getUser(@PathVariable Long id) {
-		return userService.findById(id);
-	}
+    @GetMapping("/users/{id}")
+    public UserDTO getUser(@PathVariable Long id) {
+        return userService.findById(id);
+    }
 
-	@PostMapping("/users")
-	public UserDTO addUser(@RequestBody UserDTO userDTO) {
-		return userService.save(userDTO);
-	}
+    @GetMapping("/users/cpf/{cpf}")
+    public UserDTO getUser(@PathVariable String cpf) {
+        return userService.findByCpf(cpf);
+    }
 
-	@DeleteMapping("/users/{id}")
-	public Boolean removeUser(@PathVariable Long id) {
-		return userService.delete(id);
-	}
+    @PostMapping("/users")
+    public UserDTO addUser(@RequestBody UserDTO userDTO) {
+        return userService.save(userDTO);
+    }
 
-	@GetMapping("/users/search")
-	public List<UserDTO> searchByName(@RequestParam(name="nome", required=true) String nome) {
-		return userService.searchByName(nome);
-	}
+    @DeleteMapping("/users/{id}")
+    public Boolean removeUser(@PathVariable Long id) {
+        return userService.delete(id);
+    }
 
+    @GetMapping("/users/search")
+    public List<UserDTO> searchByName(@RequestParam(name = "nome", required = true) String nome) {
+        return userService.searchByName(nome);
+    }
 
 }

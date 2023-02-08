@@ -11,7 +11,7 @@ public class UserService {
 
     public UserDTO getUserByCpf(String cpf) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/user/cpf/" + cpf;
+        String url = "http://localhost:8080/users/cpf/" + cpf;
 
         ResponseEntity<UserDTO> response = restTemplate.getForEntity(url, UserDTO.class);
         return response.getBody();

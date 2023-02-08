@@ -84,7 +84,7 @@ public class ShopService {
 
     private boolean validateProducts(List<ItemDTO> items) {
         for (ItemDTO item : items) {
-            ProductDTO productDTO = productService.getProductByIdentifier(item.getProductIdentifier())
+            ProductDTO productDTO = productService.getProductByIdentifier(item.getProductIdentifier());
 
             if (productDTO == null) {
                 return false;
