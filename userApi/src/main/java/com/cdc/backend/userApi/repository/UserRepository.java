@@ -11,9 +11,9 @@ import com.cdc.backend.userApi.model.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-	Optional<User> findByCpf(String cpf);
-	
+	Optional<User> findByCpfAndKey(String cpf, String Key);
+
 	List<User> findByNomeStartingWith(String nome);
-	
+
 	List<User> findByNomeContainingIgnoreCase(String nome);
 }

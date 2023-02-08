@@ -36,8 +36,8 @@ public class UserController {
     }
 
     @GetMapping("/users/cpf/{cpf}")
-    public UserDTO getUser(@PathVariable String cpf) {
-        return userService.findByCpf(cpf);
+    public UserDTO getUser(@PathVariable String cpf, @RequestParam(name = "key", required = true) String key) {
+        return userService.findByCpfAndKey(cpf, key);
     }
 
     @PostMapping("/users")

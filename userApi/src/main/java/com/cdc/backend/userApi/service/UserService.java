@@ -50,8 +50,8 @@ public class UserService {
         return null;
     }
 
-    public UserDTO findByCpf(String cpf) {
-        Optional<User> user = userRepository.findByCpf(cpf);
+    public UserDTO findByCpfAndKey(String cpf, String key) {
+        Optional<User> user = userRepository.findByCpfAndKey(cpf, key);
         if (user.isPresent()) {
             return DTOConverter.convert(user.get());
         }
