@@ -1,5 +1,6 @@
 package com.cdc.backend.shoppingApi.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
@@ -13,7 +14,8 @@ import com.cdc.backend.shoppingClient.exception.UserNotFoundException;
 @Service
 public class UserService {
 
-    private final String userApiUrl = "http://localhost:8080/";
+    @Value("${USER_API_URL:http://localhost:8080")
+    private String userApiUrl;
 
     public UserDTO getUserByCpf(String cpf, String key) {
         try {

@@ -15,6 +15,10 @@
     <description>Project for User API</description>
     <properties>
         <java.version>17</java.version>
+        <docker.image.prefix>loja</docker.image.prefix>
+        <docker.image.artifactId>user-api</docker.image.artifactId>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
     <dependencies>
 
@@ -60,10 +64,19 @@
     </dependencies>
 
     <build>
+        <finalName>${docker.image.artifactId}-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.9</version>
+                <configuration>
+                    <repository>${docker.image.prefix}/${docker.image.artifactId}</repository>
+                </configuration>
             </plugin>
         </plugins>
     </build>

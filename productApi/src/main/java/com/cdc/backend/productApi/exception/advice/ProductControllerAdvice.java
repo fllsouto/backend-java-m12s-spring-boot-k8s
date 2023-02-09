@@ -43,7 +43,7 @@ public class ProductControllerAdvice {
 
     @ResponseBody
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    @ExceptionHandler(CategoryNotFoundException.class)
+    @ExceptionHandler(MethodArgumentNotValidException.class)
     public ErrorDTO processValidationError(MethodArgumentNotValidException ex) {
         ErrorDTO errorDTO = new ErrorDTO();
         errorDTO.setStatus(HttpStatus.BAD_REQUEST.value());

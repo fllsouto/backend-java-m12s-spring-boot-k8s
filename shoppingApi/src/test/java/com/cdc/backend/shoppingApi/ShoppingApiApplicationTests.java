@@ -1,10 +1,10 @@
-package com.cdc.backend.productApi;
+package com.cdc.backend.shoppingApi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ProductApiApplicationTests {
+class ShoppingApiApplicationTests {
 
 	@Test
 	void contextLoads() {
